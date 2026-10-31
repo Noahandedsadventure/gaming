@@ -1,0 +1,43 @@
+name: Update gaming channel data
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-gaming-channel-data
+  cancel-in-progress: false
+
+jobs:
+  update-channel-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch channel data
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python scripts/update_channel_data.py
+
+      - name: Publish channel data
+        run: |
+          if git diff --quiet -- channel-data.json; then
+            echo "Channel data has not changed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add channel-data.json
+          git commit -m "Update cached gaming channel data"
+          git push
