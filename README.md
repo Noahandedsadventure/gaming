@@ -41,7 +41,7 @@ Update the page that owns the content:
 - Replace `[CHANNEL INTRODUCTION]` in `about/index.html` with an introduction you want to share.
 - Replace `[LOGO/ARTWORK]` and the original decorative controller illustration in `index.html` with your own artwork if wanted.
 - Add any upload schedule or additional channel details you want to share. No games, upload cadence, or social accounts have been assumed. The site currently has no social links.
-- `mods/index.html` includes Immersive Railroading (IR) and Defect Detectors, version 1.0.0 (Beta), with its CurseForge page. Duplicate the `<article class="mod-card">` for each additional mod, and verify its requirements and download link before publishing.
+- `mods/index.html` includes Immersive Railroading (IR) and the first Defect Detectors release, version 1.0.0, with its CurseForge page. Duplicate the `<article class="mod-card">` for each additional mod, and verify its requirements and download link before publishing.
 
 The YouTube channel links already use `https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g`.
 

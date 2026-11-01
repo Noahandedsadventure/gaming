@@ -995,20 +995,6 @@ button {
   font-size: 0.82rem;
 }
 
-.mod-status-beta {
-  padding: 0.2rem 0.55rem;
-  border: 1px solid var(--cn-border);
-  border-color: rgba(245, 158, 11, 0.5);
-  border-radius: 0.25rem;
-  background: rgba(245, 158, 11, 0.1);
-  color: #fcd34d;
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .mod-card h3 {
   margin: 0.8rem 0 0.45rem;
   color: #fff;
