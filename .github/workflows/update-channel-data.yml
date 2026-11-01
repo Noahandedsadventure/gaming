@@ -24,12 +24,31 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Check API key configuration
+        id: api-key
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          if [ -z "$YOUTUBE_API_KEY" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::YOUTUBE_API_KEY is not configured. Channel data was not refreshed."
+            {
+              echo "## Channel data update skipped"
+              echo "Add the \`YOUTUBE_API_KEY\` repository Actions secret to enable subscriber counts, recent videos, and stream status updates."
+              echo "The existing \`channel-data.json\` was left unchanged."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Fetch channel data
+        if: steps.api-key.outputs.configured == 'true'
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python scripts/update_channel_data.py
 
       - name: Publish channel data
+        if: steps.api-key.outputs.configured == 'true'
         run: |
           if git diff --quiet -- channel-data.json; then
             echo "Channel data has not changed."

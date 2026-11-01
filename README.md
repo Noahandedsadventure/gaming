@@ -32,7 +32,7 @@ Recent videos, subscriber count, live status, and scheduled streams are refreshe
 3. Add it to this GitHub repository under **Settings → Secrets and variables → Actions** as `YOUTUBE_API_KEY`.
 4. Run **Actions → Update gaming channel data → Run workflow** once to populate the data. Future runs are scheduled every 30 minutes.
 
-The workflow requests live status every 30 minutes and refreshes the upcoming schedule only when it is at least six hours old to limit API quota use. It requires Actions to have permission to write repository contents.
+The workflow requests live status every 30 minutes and refreshes the upcoming schedule only when it is at least six hours old to limit API quota use. If the secret is missing, the workflow reports a warning and skips the update without failing; dynamic channel data remains unchanged until the secret is configured. It also requires Actions to have permission to write repository contents.
 
 ## Personalize the site
 
