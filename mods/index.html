@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050505">
+    <meta name="description" content="Browse mods and downloads from Noah and Ed's Train Adventures Gaming.">
+    <title>Mods | Noah and Ed's Train Adventures Gaming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="site-nav-inner">
+        <a class="site-brand" href="../" aria-label="Noah and Ed's Train Adventures Gaming home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M12 9h16a7 7 0 0 1 6.8 5.3l2 8.2a5.6 5.6 0 0 1-9.2 5.5L23 24h-6l-4.6 4a5.6 5.6 0 0 1-9.2-5.5l2-8.2A7 7 0 0 1 12 9Z" /><path class="brand-mark-cutout" d="M12 15v7m-3.5-3.5h7M27 17h.1M31 21h.1" /></svg></span><span>Noah and Ed's Train Adventures Gaming</span></a>
+        <a class="site-subscriber-count" href="https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g" target="_blank" rel="noopener noreferrer" aria-live="polite" aria-label="Subscriber count loading. Visit the YouTube channel."><span>Subs</span><strong id="subscriber-count">Loading...</strong></a>
+        <button class="site-nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav-links"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <div class="site-nav-links" id="site-nav-links" hidden>
+          <a class="nav-btn" href="../">Home</a>
+          <a class="nav-btn" href="../videos/">Videos</a>
+          <a class="nav-btn active" href="../mods/" aria-current="page">Mods</a>
+          <a class="nav-btn" href="../about/">About</a>
+          <a class="live-stream-link" id="live-nav-link" href="../live/">Live streams</a>
+          <a class="nav-subscribe" href="https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g" target="_blank" rel="noopener noreferrer">Subscribe <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <p class="hero-kicker">Downloads</p>
+      <h1>Our mods</h1>
+      <p>Find and download mods from the channel.</p>
+      <div class="hero-accent" aria-hidden="true"></div>
+    </header>
+
+    <main id="main">
+      <section class="content-section mods-section" aria-labelledby="mods-title">
+        <div class="section-heading">
+          <span class="section-marker" aria-hidden="true"></span>
+          <div>
+            <h2 id="mods-title">Available downloads</h2>
+            <p>Mod information, requirements, and download links.</p>
+          </div>
+        </div>
+        <aside class="mod-dependency" aria-labelledby="dependency-title">
+          <span class="dependency-label">Required dependency</span>
+          <h3 id="dependency-title">Immersive Railroading (IR)</h3>
+          <p>All mods posted here depend on Immersive Railroading. You need IR and all required IR files installed for these mods to work.</p>
+        </aside>
+        <div class="mod-grid">
+          <article class="mod-card">
+            <div class="mod-card-heading">
+              <span class="mod-category">Immersive Railroading mod</span>
+              <span class="mod-status-beta">Beta</span>
+            </div>
+            <h3>Defect Detectors</h3>
+            <p class="mod-version">Version 1.0.0</p>
+            <p>Adds defect detectors to the game. This mod is still in beta.</p>
+            <p class="mod-requirements"><strong>Requires:</strong> Immersive Railroading (IR) and all required IR files.</p>
+            <a class="button button-primary mod-download" href="https://www.curseforge.com/minecraft/mc-mods/defect-detector-for-immersive-railroading" target="_blank" rel="noopener noreferrer">View on CurseForge <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="../">Noah and Ed's Train Adventures Gaming</a>
+      <p>© <span id="current-year"></span> Noah and Ed's Train Adventures Gaming</p>
+      <a class="footer-channel-link" href="https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g" target="_blank" rel="noopener noreferrer">YouTube channel ↗</a>
+    </footer>
+  </body>
+</html>

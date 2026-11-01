@@ -287,10 +287,6 @@ function updateSubscriberCount(count) {
 }
 
 function updateLiveStatus(liveStreams, upcomingStreams) {
-  if (!liveStatusTitle || !liveStatusMessage || !liveStatusWrap || !liveWatchLink) {
-    return;
-  }
-
   const now = Date.now();
   const activeStream = liveStreams[0] ?? upcomingStreams
     .filter((stream) => Date.parse(stream.scheduledStartTime) <= now)
@@ -299,6 +295,10 @@ function updateLiveStatus(liveStreams, upcomingStreams) {
     ))[0];
   const isLive = Boolean(activeStream && !activeStream.scheduledStartReached);
   document.querySelector("#live-nav-link")?.classList.toggle("is-live", isLive);
+
+  if (!liveStatusTitle || !liveStatusMessage || !liveStatusWrap || !liveWatchLink) {
+    return;
+  }
 
   liveStatusWrap.classList.toggle("is-live", isLive);
   if (!activeStream) {

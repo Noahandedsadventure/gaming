@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050505">
+    <meta name="description" content="Check live stream status and scheduled streams from Noah and Ed's Train Adventures Gaming.">
+    <title>Live streams | Noah and Ed's Train Adventures Gaming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="site-nav-inner">
+        <a class="site-brand" href="../" aria-label="Noah and Ed's Train Adventures Gaming home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M12 9h16a7 7 0 0 1 6.8 5.3l2 8.2a5.6 5.6 0 0 1-9.2 5.5L23 24h-6l-4.6 4a5.6 5.6 0 0 1-9.2-5.5l2-8.2A7 7 0 0 1 12 9Z" /><path class="brand-mark-cutout" d="M12 15v7m-3.5-3.5h7M27 17h.1M31 21h.1" /></svg></span><span>Noah and Ed's Train Adventures Gaming</span></a>
+        <a class="site-subscriber-count" href="https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g" target="_blank" rel="noopener noreferrer" aria-live="polite" aria-label="Subscriber count loading. Visit the YouTube channel."><span>Subs</span><strong id="subscriber-count">Loading...</strong></a>
+        <button class="site-nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav-links"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        <div class="site-nav-links" id="site-nav-links" hidden>
+          <a class="nav-btn" href="../">Home</a>
+          <a class="nav-btn" href="../videos/">Videos</a>
+          <a class="nav-btn" href="../mods/">Mods</a>
+          <a class="nav-btn" href="../about/">About</a>
+          <a class="live-stream-link active" id="live-nav-link" href="../live/" aria-current="page">Live streams</a>
+          <a class="nav-subscribe" href="https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g" target="_blank" rel="noopener noreferrer">Subscribe <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <p class="hero-kicker">Live channel status</p>
+      <h1>Live streams</h1>
+      <p>Current broadcasts and scheduled streams from the channel.</p>
+      <div class="hero-accent" aria-hidden="true"></div>
+    </header>
+
+    <main id="main">
+      <section class="content-section live-section" aria-labelledby="live-title">
+        <div class="section-heading">
+          <span class="section-marker" aria-hidden="true"></span>
+          <div>
+            <h2 id="live-title">Stream status</h2>
+            <p>Live status refreshes automatically while this page is open.</p>
+          </div>
+        </div>
+        <div class="live-panel">
+          <div class="live-status-card" aria-live="polite" aria-atomic="true">
+            <span class="status-wrap" id="status-wrap">
+              <span class="status-dot" aria-hidden="true"></span>
+              <strong id="live-status-title">Checking live status...</strong>
+            </span>
+            <p id="live-status-message">Live status will appear here when channel data is available.</p>
+            <a class="button button-secondary" id="live-watch-link" href="https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g/streams" target="_blank" rel="noopener noreferrer">Open YouTube streams <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="live-player" id="live-player-container" hidden></div>
+        </div>
+        <div class="schedule-heading">
+          <h3>Scheduled streams</h3>
+          <p>Times are shown in your local time zone.</p>
+        </div>
+        <div class="upcoming-stream-list upcoming-stream-list-page" id="live-upcoming-streams" aria-live="polite">
+          <p class="loading-message">Checking the channel schedule...</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="../">Noah and Ed's Train Adventures Gaming</a>
+      <p>© <span id="current-year"></span> Noah and Ed's Train Adventures Gaming</p>
+      <a class="footer-channel-link" href="https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g" target="_blank" rel="noopener noreferrer">YouTube channel ↗</a>
+    </footer>
+  </body>
+</html>

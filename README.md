@@ -12,6 +12,17 @@ python -m http.server 8000
 
 Open `http://localhost:8000`. The channel data is loaded from `channel-data.json`, so opening the HTML directly as a `file:` URL will not load dynamic data.
 
+## Pages
+
+The homepage is `index.html`; each navigation page has its own folder and `index.html`:
+
+- `videos/index.html` — recent short-form and long-form uploads
+- `mods/index.html` — mod requirements and downloads
+- `about/index.html` — channel introduction
+- `live/index.html` — live status and upcoming streams
+
+This folder layout publishes clean URLs such as `/mods/` on static hosts that serve directory index files.
+
 ## Configure private API access
 
 Recent videos, subscriber count, live status, and scheduled streams are refreshed by `.github/workflows/update-channel-data.yml`. The workflow calls the YouTube Data API from GitHub Actions and writes the public results to `channel-data.json`; the browser never receives the API key.
@@ -25,11 +36,12 @@ The workflow requests live status every 30 minutes and refreshes the upcoming sc
 
 ## Personalize the site
 
-Update `index.html`:
+Update the page that owns the content:
 
-- Replace `[CHANNEL INTRODUCTION]` with an introduction you want to share.
-- Replace `[LOGO/ARTWORK]` and the original decorative controller illustration with your own artwork if wanted.
+- Replace `[CHANNEL INTRODUCTION]` in `about/index.html` with an introduction you want to share.
+- Replace `[LOGO/ARTWORK]` and the original decorative controller illustration in `index.html` with your own artwork if wanted.
 - Add any upload schedule or additional channel details you want to share. No games, upload cadence, or social accounts have been assumed. The site currently has no social links.
+- `mods/index.html` includes Immersive Railroading (IR) and Defect Detectors, version 1.0.0 (Beta), with its CurseForge page. Duplicate the `<article class="mod-card">` for each additional mod, and verify its requirements and download link before publishing.
 
 The YouTube channel links already use `https://www.youtube.com/channel/UCMxGPWLjDHRQ9xoLHCXd45g`.
 
